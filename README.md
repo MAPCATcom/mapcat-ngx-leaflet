@@ -6,7 +6,7 @@ The project has dependencies that require Node 6.9.0 or higher, together with NP
 
 ### Setup Environment
 
-You need to have the npm package manager setup and the @angular-cli package installed in global scope. You can do that with the command:
+You need to have the npm package manager set up and the angular-cli package installed in global scope. You can do that with the command:
 ```
 npm install -g @angular/cli
 ```
