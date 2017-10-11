@@ -23,7 +23,10 @@
     "@angular/router": "^4.2.4",
     "core-js": "^2.4.1",
     "rxjs": "^5.4.2",
-    "zone.js": "^0.8.14"
+    "zone.js": "^0.8.14",
+    "leaflet": "1",
+    "@types/leaflet": "1",
+    "@asymmetrik/ngx-leaflet": "^2.4.1"
   },
   "devDependencies": {
     "@angular/cli": "1.3.0",

@@ -1,0 +1,48 @@
+<div style="float: left; height: 100%;">
+  <div style="margin: 10px">
+    <h2>Tile Settings</h2>
+    <h3>Profiles:</h3>
+    <div *ngFor="let story of tileSettings.LIST_STORIES" style="width: 100%">
+      <label>
+        <input type="radio" [(ngModel)]="tileSettings.story" (ngModelChange)="tileSettings.generateParameter()" [name]="story" [id]="story"
+          [value]="story"> {{story}}
+      </label>
+    </div>
+    <h3>Options:</h3>
+    <div>
+      <input [(ngModel)]="tileSettings.renderCycleRoutes" (ngModelChange)="tileSettings.generateParameter()" type="checkbox" name="cycleRoutes">
+      <label for="cycleRoutes">render national bicycle routes</label>
+    </div>
+    <div>
+      <input [(ngModel)]="tileSettings.renderOnlyLabels" (ngModelChange)="tileSettings.generateParameter()" type="checkbox" name="onlyLabels">
+      <label for="onlyLabels">render only labels and symbols</label>
+    </div>
+    <div>
+      <input [(ngModel)]="tileSettings.renderAsRetina" (ngModelChange)="tileSettings.generateParameter()" type="checkbox" name="asRetina">
+      <label for="asRetina">render for retina displays</label>
+    </div>
+    <div>
+      <label for="langCode">language code:</label>
+      <input [(ngModel)]="tileSettings.langCode" (ngModelChange)="tileSettings.generateParameter()" type="input" name="langCode"
+        size="5">
+    </div>
+  </div>
+  <hr>
+  <div style="margin: 10px">
+    <h2>URL Settings</h2>
+    <div>
+      <h3>API URL:</h3>
+      <textarea [(ngModel)]="tileSettings.urlAPI" name="urlAPI" cols="40" rows="3"></textarea>
+    </div>
+    <div>
+      <h3>URL Parameters:</h3>
+      <textarea [(ngModel)]="tileSettings.urlParameter" name="urlParam" cols="40" rows="3"></textarea>
+    </div>
+    <div style="margin: 10px; text-align: center">
+      <button (click)="generateLayer()">Reload Layer!</button>
+    </div>
+  </div>
+</div>
+<div leaflet [leafletLayers]="layers" [leafletOptions]="leafletOptions" [leafletZoom]="leafletZoom" [leafletCenter]="leafletCenter"
+  (leafletMapReady)="onMapReady($event)" style="height: 100%; width: auto">
+</div>
